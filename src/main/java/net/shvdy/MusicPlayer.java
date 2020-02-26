@@ -1,5 +1,5 @@
 /**
- * MusicalPlayer
+ * MusicPlayer
  * <p>
  * version 1.0
  * <p>
@@ -13,7 +13,7 @@ package net.shvdy;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MusicalPlayer {
+public class MusicPlayer {
     private List<Music> musicList = new ArrayList<>();
 
     private String name;

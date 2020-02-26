@@ -21,7 +21,7 @@
           class="net.shvdy.ClassicalMusic">
     </bean>
 
-    <bean id="musicalPlayer" class="net.shvdy.MusicalPlayer">
+    <bean id="musicPlayer" class="net.shvdy.MusicPlayer" scope="prototype">
         <property name="musicList">
             <list>
                 <ref bean="trapMusicBean"/>
