@@ -19,6 +19,9 @@ public class TestSpring {
 
         MusicPlayer mp = context.getBean("musicPlayer", MusicPlayer.class);
         MusicPlayer mp2 = context.getBean("musicPlayer", MusicPlayer.class);
+        Music m = context.getBean("trapMusicBean", Music.class);
+        Music m2 = context.getBean("trapMusicBean", Music.class);
+
 
         System.out.println(mp == mp2);
 
