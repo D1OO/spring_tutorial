@@ -9,7 +9,9 @@
 
     <bean id="musicBean"
           class="net.shvdy.TrapMusic">
-
     </bean>
 
+    <bean id="musicalPlayer" class="net.shvdy.MusicalPlayer">
+        <constructor-arg ref="musicBean"/>
+    </bean>
 </beans>
