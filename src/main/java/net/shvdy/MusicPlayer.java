@@ -10,47 +10,21 @@
 
 package net.shvdy;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MusicPlayer {
-    private List<Music> musicList = new ArrayList<>();
+    ClassicalMusic classicalMusic;
+    RockMusic rockMusic;
 
-    private String name;
-
-    private int volume;
-
-//    public void setMusic(Music music) {
-//        this.music = music;
-//    }
-
-    public List<Music> getMusicList() {
-        return musicList;
+    @Autowired
+    MusicPlayer(ClassicalMusic cm, RockMusic rm){
+        classicalMusic = cm;
+        rockMusic = rm;
     }
 
-    public void setMusicList(List<Music> musicList) {
-        this.musicList = musicList;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getVolume() {
-        return volume;
-    }
-
-    public void setVolume(int volume) {
-        this.volume = volume;
-    }
-
-    public void playMusic() {
-        for (Music m : musicList){
-            System.out.println(m.getMusic());
-        }
+    public String playMusic() {
+        return classicalMusic.getMusic();
     }
 }
