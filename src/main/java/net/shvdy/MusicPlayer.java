@@ -10,27 +10,19 @@
 
 package net.shvdy;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Random;
 
-@Component
 public class MusicPlayer {
     @Value("${musicPlayer.name}")
     private String name;
     @Value("${musicPlayer.volume}")
     private int volume;
 
-    public enum GENRES {
-        TRAP,
-        ROCK
-    }
 
-    private Music trapMusic;
-    private Music rockMusic;
+    private List<Music> music;
 
     public String getName() {
         return name;
@@ -40,20 +32,13 @@ public class MusicPlayer {
         return volume;
     }
 
-    @Autowired
-    MusicPlayer(@Qualifier("trapMusic") Music trapMusic,
-                @Qualifier("rockMusic") Music rockMusic) {
-        this.trapMusic = trapMusic;
-        this.rockMusic = rockMusic;
+    MusicPlayer(List<Music> music) {
+        this.music = music;
     }
 
-    public String playMusic(GENRES genre) {
-        int rnd = new Random().nextInt(3);
-        if (genre == GENRES.TRAP) {
-            return trapMusic.getMusic()[rnd];
-        } else if (genre == GENRES.ROCK) {
-            return rockMusic.getMusic()[rnd];
-        }
-        return "empty";
+    public String playMusic() {
+        Random rnd = new Random();
+        String[] songs = music.get(rnd.nextInt(music.size())).getMusic();
+        return songs[rnd.nextInt(songs.length - 1)];
     }
 }

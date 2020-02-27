@@ -25,6 +25,6 @@ public class Computer {
     }
 
     public void playMusic(){
-        System.out.println("Computer #" + id + " playing: " + mp.playMusic(MusicPlayer.GENRES.TRAP));
+        System.out.println("Computer #" + id + " playing: " + mp.playMusic());
     }
 }

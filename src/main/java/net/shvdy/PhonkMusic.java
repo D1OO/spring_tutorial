@@ -1,18 +1,19 @@
 /**
- * RockMusic
+ * PhonkMusic
  * <p>
  * version 1.0
  * <p>
- * 26.02.2020
+ * 27.02.2020
  * <p>
  * Copyright(r) shvdy.net
  */
 
 package net.shvdy;
 
-public class RockMusic implements Music {
+public class PhonkMusic implements Music {
 
-    String[] heat = {"sic", "toxicity", "chop suey"};
+    private String[] heat = {"Dangerous Mixx", "Esprit", "Motorola Flip"};
+
     @Override
     public String[] getMusic() {
         return heat;
