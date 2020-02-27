@@ -20,6 +20,12 @@ public class TestSpring {
         Computer c = context.getBean("computer", Computer.class);
         c.playMusic();
 
+        TrapMusic m = context.getBean("trapMusic", TrapMusic.class);
+        TrapMusic m2 = context.getBean("trapMusic", TrapMusic.class);
+        System.out.println(m == m2);
+
+        MusicPlayer mp = context.getBean("musicPlayer", MusicPlayer.class);
+        System.out.println(mp.getVolume() + " " + mp.getName());
         context.close();
     }
 }
