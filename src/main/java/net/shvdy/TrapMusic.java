@@ -13,9 +13,11 @@ package net.shvdy;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ClassicalMusic implements Music {
+public class TrapMusic implements Music {
+
+    String[] heat = {"wonda", "BETRAYAL", "EMPEROR"};
     @Override
-    public String getMusic() {
-        return "Symphony N9";
+    public String[] getMusic() {
+        return heat;
     }
 }
